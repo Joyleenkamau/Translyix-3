@@ -3,5 +3,10 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  server: { host: true }, // LAN testing
+  server: { host: true },
+  build: {
+    rollupOptions: {
+      input: '/index.html', // make sure Vite resolves paths correctly
+    },
+  },
 })
